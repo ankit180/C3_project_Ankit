@@ -32,7 +32,7 @@ class RestaurantTest {
         LocalTime currentTime = LocalTime.parse("10:00:00");
         Mockito.when(spy_Restaurant.getCurrentTime()).thenReturn(currentTime);
 
-        boolean output = restaurant.isRestaurantOpen();
+        boolean output = spy_Restaurant.isRestaurantOpen();
         assertTrue(output);
     }
 
