@@ -29,10 +29,10 @@ class RestaurantTest {
 
         Restaurant spy_Restaurant = Mockito.spy(restaurant);
 
-        LocalTime currentTime = LocalTime.parse("10:00:00");
+        LocalTime currentTime = LocalTime.parse("12:00:00");
         Mockito.when(spy_Restaurant.getCurrentTime()).thenReturn(currentTime);
 
-        boolean output = restaurant.isRestaurantOpen();
+        boolean output = spy_Restaurant.isRestaurantOpen();
         assertTrue(output);
     }
 
@@ -83,4 +83,16 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+//    @Test
+//    public void adding_item_to_cart_should_increase_cart_size_by_1() {
+//        restaurant.addToCart("Sweet corn soup",119);
+//        restaurant.addToCart("Vegetable lasagne", 269);
+//
+//        int initialCartSize = restaurant.getMenu().size();
+//        restaurant.addToCart("Sizzling brownie",319);
+//        assertEquals(initialCartSize+1,restaurant.getMenu().size());
+//    }
 }
+
+

@@ -59,6 +59,10 @@ public class Restaurant {
 
         menu.remove(itemToBeRemoved);
     }
+
+//    public float orderTotalValue(String itemName){
+//        item.
+//    }
     public void displayDetails(){
         System.out.println("Restaurant:"+ name + "\n"
                 +"Location:"+ location + "\n"
