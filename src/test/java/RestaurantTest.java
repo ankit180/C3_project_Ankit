@@ -84,15 +84,36 @@ class RestaurantTest {
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-//    @Test
-//    public void adding_item_to_cart_should_increase_cart_size_by_1() {
-//        restaurant.addToCart("Sweet corn soup",119);
-//        restaurant.addToCart("Vegetable lasagne", 269);
-//
-//        int initialCartSize = restaurant.getMenu().size();
-//        restaurant.addToCart("Sizzling brownie",319);
-//        assertEquals(initialCartSize+1,restaurant.getMenu().size());
-//    }
+    @Test
+    public void adding_items_to_cart_should_increase_cart_size_by_1(){
+        restaurant.addToMenu("Sweet corn soup",119);
+        restaurant.addToMenu("Vegetable lasagne", 269);
+
+        restaurant.addItemsToCart("Sweet corn soup");
+        restaurant.addItemsToCart("Vegetable lasagne");
+
+        int initialCartSize = restaurant.addItemsToCart("Sizzling brownie").size();
+        //restaurant.addItemsToCart("Sizzling brownie");
+        assertEquals(initialCartSize+1,restaurant.addItemsToCart("Sizzling brownie").size());
+
+
+    }
+
+    @Test
+    public void calculating_total_value_of_the_added_items() {
+
+        restaurant.addToMenu("Sweet corn soup",119);
+        restaurant.addToMenu("Vegetable lasagne", 269);
+
+        restaurant.addItemsToCart("Sweet corn soup");
+        restaurant.addItemsToCart("Vegetable lasagne");
+
+        int priceTotal = restaurant.orderTotalValue();
+        restaurant.orderTotalValue();
+
+        assertEquals(388, restaurant.orderTotalValue());
+
+    }
 }
 
 

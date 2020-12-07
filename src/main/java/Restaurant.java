@@ -10,6 +10,8 @@ public class Restaurant {
     public LocalTime closingTime;
     private List<Item> menu = new ArrayList<Item>();
 
+    private List<Item> cart = new ArrayList<Item>();
+
     public Restaurant(String name, String location, LocalTime openingTime, LocalTime closingTime) {
         this.name = name;
         this.location = location;
@@ -60,9 +62,7 @@ public class Restaurant {
         menu.remove(itemToBeRemoved);
     }
 
-//    public float orderTotalValue(String itemName){
-//        item.
-//    }
+
     public void displayDetails(){
         System.out.println("Restaurant:"+ name + "\n"
                 +"Location:"+ location + "\n"
