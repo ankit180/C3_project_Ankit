@@ -62,6 +62,21 @@ public class Restaurant {
         menu.remove(itemToBeRemoved);
     }
 
+    public List<Item> addItemsToCart(String itemName){
+        Item item_in_cart = findItemByName(itemName);
+
+        cart.add(item_in_cart);
+
+        return cart;
+    }
+
+    public int orderTotalValue(){
+        int totalValue = 0;
+        for (Item itemInCart: this.cart){
+            totalValue = totalValue + itemInCart.getPrice();
+        }
+        return totalValue;
+    }
 
     public void displayDetails(){
         System.out.println("Restaurant:"+ name + "\n"
