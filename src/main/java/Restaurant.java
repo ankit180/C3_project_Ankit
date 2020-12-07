@@ -61,7 +61,7 @@ public class Restaurant {
 
         menu.remove(itemToBeRemoved);
     }
-
+    
 
     public void displayDetails(){
         System.out.println("Restaurant:"+ name + "\n"
